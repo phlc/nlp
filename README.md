@@ -49,7 +49,17 @@ Text Mining and Analysis (TextMA) é um repositório dedicado a atividades acad�
     - Bots 
       - Geração generativa de texto 
 
-## Refer&ecirc;ncias
+## Aula 1
+Tarefas:
+- Ler o capítulo 1 do [livro](#Aggarwal-2015-BOOK);
+- Pesquisar os seguintes tópicos:
+    - Text Representation:
+    - Word Vector
+    - Word Embedding 
+    - Cosine Similarity 
+    - BoW (Bag of Words)
+
+# Refer&ecirc;ncias
 
 <a name="Aggarwal-2015-BOOK"></a>\[[1][1]\] Charu Aggarwal. Data Mining: The Textbook. 1ed. Springer, 2015.
 

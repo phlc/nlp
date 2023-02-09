@@ -1,5 +1,5 @@
 # TextMA
-Text Mining and Analysis (TextMA) é um repositório dedicado a atividades acadêmicas de ensino e pesquisa em tópicos relacionados à análise e mineração de textos em linguagem natural. Diversos problemas relacionados a NLP (Natural Lnguage Processing) são tratados aqui, incluindo:
+Text Mining and Analysis (TextMA) é um repositório dedicado a atividades acadêmicas de ensino e pesquisa em tópicos relacionados à análise e mineração de textos em linguagem natural. Diversos problemas relacionados a NLP (Natural Language Processing) são tratados aqui, incluindo:
 
 1. Conceitos Básicos
     - O que é um texto?
@@ -7,47 +7,57 @@ Text Mining and Analysis (TextMA) é um repositório dedicado a atividades acad�
     - O que é minerar texto?
     - O que é analisar texto?
 
-2. Representação Textual
-    - Como representar texto para processamento?
-    - Formas de representação 
-
-3. Processamento Textual
+2. Processamento Textual
     - Problemas relacionados a textos
     - Tarefas de pré-processamento Textual
       - Tokenização
-      - Tagging
+      - Normalização
       - Lematização
-      - Stemming 
+      - Stemming
       - Stop-words
+      - Tagging
+      - Chunking
+
+3. Representação Textual
+      - Como representar texto para processamento?
+      - Formas de representação
+        - Probabilistic Models
+          - One-Hot encoding
+          - BoW (CountVectorizer)
+          - BoW (n-grams)
+          - BoW (TF-IDF)
+      - Topic Models
+      - Neural Language Models
 
 4. Clustering
     - Similaridade Textual
     - Representação Espacial
 
-5. Classificação 
-    - Baseados em Regras 
-    - Árvores de Decisão 
-    - SVM 
-    - Boosting 
+5. Classificação
+    - Baseados em Regras
+    - Árvores de Decisão
+    - SVM
+    - Boosting
     - Deep Learning
 
-6. Ranking 
-    - Learning to Rank 
+6. Ranking
+    - Learning to Rank
 
 7. Aplicação Práticas (Problemas)
-    - NERC 
-    - Análise de Sentimentos 
-    - Detecçcão de Emoção
-    - Topic Classification 
+    - NERC
+    - Análise de Sentimentos
+    - Detecção de Emoção
+    - Topic Classification
     - Text Summarization
     - Recommendation (Filtragem)
 
 8. Neural Text Analysis
-    - Text Embeddings 
+    - Text Embeddings
+      - Word2Vec
       - Glove
       - Transformers
-    - Bots 
-      - Geração generativa de texto 
+    - Bots
+      - Geração generativa de texto
 
 ## Aula 1
 Tarefas:
@@ -55,8 +65,8 @@ Tarefas:
 - Pesquisar os seguintes tópicos:
     - Text Representation:
     - Word Vector
-    - Word Embedding 
-    - Cosine Similarity 
+    - Word Embedding
+    - Cosine Similarity
     - BoW (Bag of Words)
 
 # Refer&ecirc;ncias

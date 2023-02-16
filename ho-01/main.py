@@ -1,3 +1,4 @@
+from unidecode import unidecode
 
 #Open Shakespeare file
 input = open("../datasets/Shakespeare.txt")
@@ -10,6 +11,9 @@ text = input.read()
 
 #Change all characters to lower case
 text = text.lower()
+
+#Normalize special characters
+text = unidecode(text)
 
 #Replace non alphanumeric characters with one blank space
 for char in text:

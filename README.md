@@ -41,6 +41,8 @@ Tarefas:
 
 <a name="MIT-1952-CMT"></a>\[[7][7]\] Conference on Mechanical Translation. MIT. 1952.
 
+<a name="Manning-2008-BOOK"></a>\[[8][8]\] Christopher D. Manning, Prabhakar Raghavan, and Hinrich Schütze, Introduction to Information Retrieval, Cambridge University Press. 2008.
+
 [1]: https://doc.lagout.org/Others/Data%20Mining/Data%20Mining_%20The%20Textbook%20%5BAggarwal%202015-04-14%5D.pdf
 [2]: https://web.stanford.edu/~jurafsky/slp3/
 [3]: https://github.com/jacobeisenstein/gt-nlp-class/blob/master/notes/eisenstein-nlp-notes.pdf
@@ -48,3 +50,4 @@ Tarefas:
 [5]: https://doi.org/10.1613/jair.4992
 [6]: https://www.aclweb.org/anthology/W09-0103
 [7]: http://mt-archive.info/MIT-1952-TOC.htm
+[8]: https://nlp.stanford.edu/IR-book/

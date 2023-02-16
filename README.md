@@ -4,26 +4,16 @@ ___
 ![Version](https://badgen.net/badge/version/1.0.0/purple)
 ![Update](https://badgen.net/badge/update/2023-02-01/green)
 
-**Text Mining and Analysis** is about using analytical methods and natural language processing (NLP) to derive high-quality patterns from text \[[1](#Aggarwal-2015-BOOK)\]. Additionally, NLP refers to methods for making human language accessible to machines \[[2](#Eisenstein-2018-BOOK)\]. It designates the design and analysis of representations, techniques and algorithms to solve practical language problems by taking as input or produce as output unstructured natural human language data \[[3](#Goldberg-2017-SLHLT)\]. In this repository one present relevant material on Text Mining and NLP topics, including:
+**Text Mining and Analysis** is about using analytical methods and natural language processing (NLP) to derive high-quality patterns from text \[[1](#Aggarwal-2015-BOOK)\]. Additionally, NLP refers to methods for making human language accessible to machines \[[3](#Eisenstein-2018-BOOK)\]. It designates the design and analysis of representations, techniques and algorithms to solve practical language problems by taking as input or produce as output unstructured natural human language data \[[4](#Goldberg-2017-SLHLT)\]. In this repository one present relevant material on Text Mining and NLP topics, including:
 
 1. **Basic Concepts**: What is text? What is text mining and text analytics?
-2. **Text Processing**: Tokenization, Normalization, Lemmatization, Stemming, Stop-words, Tagging, Chunking
+2. **Text Processing**: Normalization, Segmentation, Tokenization, Lemmatization, Stemming, Stop-words, Tagging, Chunking
 3. **Text Representation**: Text Vectors, Probabilistic Models (One-Hot encoding, CountVectorizer BoW, n-grams BoW, TF-IDF BoW), Topic Models, Neural Models
 4. **Clustering**: Text Similarity, Distance Metrics
 5. **Classification**: Rule-based, Decision Trees, SVM, Boosting, Deep Learning
 6. **Ranking**: Learning to Rank
-7. **Applications (Problems)**: NERC, Sentiment Analysis, Emotion Detection, Topic Classification, Text Summarization, Recommendation
+7. **Applications (Problems)**: NERC, Sentiment Analysis, Emotion Detection, Fraud Detection, Topic Classification, Text Summarization, Recommendation
 8. **Neural Text Analysis**: Text Embeddings (Word2Vec, Glove, FastText, Transformers, BERT, GPT), Generative Approaches
-
-## Aula 1
-Tarefas:
-- Ler o capítulo 1 do [livro](#Aggarwal-2015-BOOK);
-- Pesquisar os seguintes tópicos:
-    - Text Representation:
-    - Word Vector
-    - Word Embedding
-    - Cosine Similarity
-    - BoW (Bag of Words)
 
 # Refer&ecirc;ncias
 

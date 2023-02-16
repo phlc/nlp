@@ -62,6 +62,18 @@ Sintaxe -> Composição gramatical do texto    Substantivo? Verbo? Adjetivo?
 
 Semântica -> Significado dos componentes textuais -> conceito, ideia
 
+## Text Segmentation
+It is a non-trivial problem of dividing a string of written language into its components.
+
+Morphological Segmentation: String -> Morphemes
+Word Segmentation: String -> words
+Intent Segmentation: String -> 2 or more group of words
+Sentence Segmentation: String -> sentences
+Paragraph Segmentation: String -> paragraphs
+Topic Segmentation: String -> topics (groups of sentences on the same topic)
+
+https://en.wikipedia.org/wiki/Text_segmentation#:~:text=Text%20segmentation%20is%20the%20process,subject%20of%20natural%20language%20processing.
+
 ## Text Tokenization
 It's a Text Segmentation Problem.
 
@@ -79,15 +91,3 @@ White Space Tokenization, Rule Based Tokenization (Dictionary Based Tokenization
 Python Libraries: NLTK, TextBlob, spaCy, Gensim, Keras
 
 NLTK Rule-based: Treebank, Tweet, MWET (Multi-Word Expression Tokenizer)
-
-## Text Segmentation
-It is a non-trivial problem of dividing a string of written language into its components.
-
-Morphological Segmentation: String -> Morphemes
-Word Segmentation: String -> words
-Intent Segmentation: String -> 2 or more group of words
-Sentence Segmentation: String -> sentences
-Paragraph Segmentation: String -> paragraphs
-Topic Segmentation: String -> topics (groups of sentences on the same topic)
-
-https://en.wikipedia.org/wiki/Text_segmentation#:~:text=Text%20segmentation%20is%20the%20process,subject%20of%20natural%20language%20processing.

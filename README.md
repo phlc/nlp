@@ -1,4 +1,4 @@
-![Sólides](images/logo-solides.svg)
+![Sólides](images/TextMA.png)
 ___
 ![Author](https://badgen.net/badge/author/@wladbrandao/blue?icon=github)
 ![Version](https://badgen.net/badge/version/1.0.0/purple)

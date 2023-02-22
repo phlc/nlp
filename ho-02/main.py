@@ -1,6 +1,7 @@
 from unidecode import unidecode
 import nltk
 import nltk.tokenize as to
+import textblob as tb
 import regex as re
 
 nltk.download('punkt')
@@ -63,7 +64,7 @@ testToken03 = to.TreebankWordTokenizer().tokenize(testNormalized)
 shakespeareToken03 = to.TreebankWordTokenizer().tokenize(shakespeareNormalized)
 
 print("\nTest String 3: ", testToken03)
-output = open("ShakespeareTokenized02.txt", "w+")
+output = open("ShakespeareTokenized03.txt", "w+")
 output.write("["+ (", ".join(shakespeareToken03)) +"]")
 
 # #NLTK: Word Punctuation Tokenizer
@@ -72,27 +73,41 @@ testToken04 = to.WordPunctTokenizer().tokenize(testNormalized)
 
 shakespeareToken04 = to.WordPunctTokenizer().tokenize(shakespeareNormalized)
 
-print("\nTest String 4: ", testToken03)
-output = open("ShakespeareTokenized02.txt", "w+")
-output.write("["+ (", ".join(shakespeareToken03)) +"]")
+print("\nTest String 4: ", testToken04)
+output = open("ShakespeareTokenized04.txt", "w+")
+output.write("["+ (", ".join(shakespeareToken04)) +"]")
 
 # #NLTK: Tweet Tokenizer
 
-# print("Test String 5: " + testToken05)
-# output = open("ShakespeareTokenized05.txt", "w+")
-# output.write(shakespeareToken05)
+testToken05 = to.TweetTokenizer().tokenize(testNormalized)
+
+shakespeareToken05 = to.TweetTokenizer().tokenize(shakespeareNormalized)
+
+print("\nTest String 5: ", testToken05)
+output = open("ShakespeareTokenized05.txt", "w+")
+output.write("["+ (", ".join(shakespeareToken05)) +"]")
 
 # #NLTK: MWE Tokenizer
 
-# print("Test String 6: " + testToken06)
-# output = open("ShakespeareTokenized06.txt", "w+")
-# output.write(shakespeareToken06)
+tk = to.MWETokenizer([('$', '300')], separator='')
+
+testToken06 = tk.tokenize(testToken05)
+
+shakespeareToken06 = tk.tokenize(shakespeareToken05)
+
+print("\nTest String 6: ", testToken06)
+output = open("ShakespeareTokenized06.txt", "w+")
+output.write("["+ (", ".join(shakespeareToken06)) +"]")
 
 # #TextBlob Word Tokenizer
 
-# print("Test String 7: " + testToken07)
-# output = open("ShakespeareTokenized07.txt", "w+")
-# output.write(shakespeareToken07)
+testToken07 = tb.TextBlob(testNormalized).words
+
+shakespeareToken07 = tb.TextBlob(shakespeareNormalized).words
+
+print("\nTest String 7: ", testToken07)
+output = open("ShakespeareTokenized07.txt", "w+")
+output.write("["+ (", ".join(shakespeareToken05)) +"]")
 
 # #spaCy Tokenizer
 

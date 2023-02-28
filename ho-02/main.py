@@ -1,10 +1,11 @@
 from unidecode import unidecode
-import nltk
 import nltk.tokenize as to
 import textblob as tb
 import regex as re
+import spacy
+import gensim.utils as gensim
+from keras.preprocessing.text import text_to_word_sequence as keras
 
-nltk.download('punkt')
 
 """
 Inputs
@@ -47,7 +48,7 @@ print("\nTest String 1: ", testToken01)
 output = open("ShakespeareTokenized01.txt", "w+")
 output.write("["+ (", ".join(shakespeareToken01)) +"]")
 
-# #NLTK: Word Tokenizer
+#NLTK: Word Tokenizer
 
 testToken02 = to.word_tokenize(testNormalized)
 
@@ -57,7 +58,7 @@ print("\nTest String 2: ", testToken02)
 output = open("ShakespeareTokenized02.txt", "w+")
 output.write("["+ (", ".join(shakespeareToken02)) +"]")
 
-# #NLTK: Tree Bank Tokenizer
+#NLTK: Tree Bank Tokenizer
 
 testToken03 = to.TreebankWordTokenizer().tokenize(testNormalized)
 
@@ -67,7 +68,7 @@ print("\nTest String 3: ", testToken03)
 output = open("ShakespeareTokenized03.txt", "w+")
 output.write("["+ (", ".join(shakespeareToken03)) +"]")
 
-# #NLTK: Word Punctuation Tokenizer
+#NLTK: Word Punctuation Tokenizer
 
 testToken04 = to.WordPunctTokenizer().tokenize(testNormalized)
 
@@ -77,7 +78,7 @@ print("\nTest String 4: ", testToken04)
 output = open("ShakespeareTokenized04.txt", "w+")
 output.write("["+ (", ".join(shakespeareToken04)) +"]")
 
-# #NLTK: Tweet Tokenizer
+#NLTK: Tweet Tokenizer
 
 testToken05 = to.TweetTokenizer().tokenize(testNormalized)
 
@@ -87,7 +88,7 @@ print("\nTest String 5: ", testToken05)
 output = open("ShakespeareTokenized05.txt", "w+")
 output.write("["+ (", ".join(shakespeareToken05)) +"]")
 
-# #NLTK: MWE Tokenizer
+#NLTK: MWE Tokenizer
 
 tk = to.MWETokenizer([('$', '300')], separator='')
 
@@ -99,7 +100,7 @@ print("\nTest String 6: ", testToken06)
 output = open("ShakespeareTokenized06.txt", "w+")
 output.write("["+ (", ".join(shakespeareToken06)) +"]")
 
-# #TextBlob Word Tokenizer
+#TextBlob Word Tokenizer
 
 testToken07 = tb.TextBlob(testNormalized).words
 
@@ -107,22 +108,36 @@ shakespeareToken07 = tb.TextBlob(shakespeareNormalized).words
 
 print("\nTest String 7: ", testToken07)
 output = open("ShakespeareTokenized07.txt", "w+")
-output.write("["+ (", ".join(shakespeareToken05)) +"]")
+output.write("["+ (", ".join(shakespeareToken07)) +"]")
 
-# #spaCy Tokenizer
+#spaCy Tokenizer
 
-# print("Test String 8: " + testToken08)
-# output = open("ShakespeareTokenized08.txt", "w+")
-# output.write(shakespeareToken08)
+sp = spacy.load('en_core_web_sm')
 
-# #Gensim Word Tokenizer
+testToken08 = [token.text for token in sp(testNormalized)]
 
-# print("Test String 9: " + testToken09)
-# output = open("ShakespeareTokenized09.txt", "w+")
-# output.write(shakespeareToken09)
+shakespeareToken08 = [token.text for token in sp(shakespeareNormalized)]
 
-# #Keras Tokenization
+print("\nTest String 8: ", testToken08)
+output = open("ShakespeareTokenized08.txt", "w+")
+output.write("["+ (", ".join(shakespeareToken08)) +"]")
 
-# print("Test String 10: " + testToken10)
-# output = open("ShakespeareTokenized10.txt", "w+")
-# output.write(shakespeareToken10)
+#Gensim Word Tokenizer
+
+testToken09 = list(gensim.tokenize(testNormalized))
+
+shakespeareToken09 = list(gensim.tokenize(shakespeareNormalized))
+
+print("\nTest String 9: ", testToken09)
+output = open("ShakespeareTokenized09.txt", "w+")
+output.write("["+ (", ".join(shakespeareToken09)) +"]")
+
+#Keras Tokenization
+
+testToken10 = keras(testNormalized)
+
+shakespeareToken10 = keras(shakespeareNormalized)
+
+print("\nTest String 10: ", testToken10)
+output = open("ShakespeareTokenized10.txt", "w+")
+output.write("["+ (", ".join(shakespeareToken10)) +"]")

@@ -168,11 +168,11 @@ for token in ShakespeareTokenized01_00:
     if token in row:
       row[1] += 1
     else:
-      lemmaData.append([token, 1, len(token ])
+      lemmaData.append([token, 1, len(token) ])
   
+print (lemmaData)
 
-
-lemmaFile = csv.writer(open ("ShakespeareTokenized01_00.csv", "w+"))
+# lemmaFile = csv.writer(open ("ShakespeareTokenized01_00.csv", "w+"))
 # porterFile = csv.writer(open ("ShakespeareTokenized01_01.csv", "w+"))
 # snowFile = csv.writer(open ("ShakespeareTokenized01_02.csv", "w+"))
 

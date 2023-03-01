@@ -4,6 +4,8 @@ import nltk
 from datetime import datetime
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
+from nltk.stem.porter import PorterStemmer
+from nltk.stem.snowball import SnowballStemmer
 
 nltk.download('stopwords')
 nltk.download('wordnet')
@@ -131,4 +133,27 @@ output.write("["+ (", ".join(ShakespeareTokenized01_00)) +"]")
 
 """
 Text Stemming
+"""
+# Porter Stemmer
+porter = PorterStemmer()
+
+testToken01_01 = [porter.stem(word) for word in testToken01_SW]
+ShakespeareTokenized01_01 = [porter.stem(word) for word in shakespeareToken01_SW]
+
+print("\nTest Porter Stemmer: ", testToken01_01)
+output = open("ShakespeareTokenized01_01.txt", "w+")
+output.write("["+ (", ".join(ShakespeareTokenized01_01)) +"]")
+
+# Snowball Stemmer
+snow = SnowballStemmer("english")
+
+testToken01_02 = [porter.stem(word) for word in testToken01_SW]
+ShakespeareTokenized01_02 = [porter.stem(word) for word in shakespeareToken01_SW]
+
+print("\nTest Snowball Stemmer: ", testToken01_02)
+output = open("ShakespeareTokenized01_02.txt", "w+")
+output.write("["+ (", ".join(ShakespeareTokenized01_02)) +"]")
+
+"""
+Vocabulary Analysis
 """

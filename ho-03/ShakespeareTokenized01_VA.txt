@@ -1,0 +1,13 @@
+Lemmatization
+Vocabulary Size: 3104
+Average Occurrences: 3.0705541237113403
+Average Size: 6.264175257731959
+
+Porter
+Vocabulary Size: 2846
+Average Occurrences: 3.3489107519325367
+Average Size: 5.654954321855236
+
+SnowballVocabulary Size: 2846
+Average Occurrences: 3.3489107519325367
+Average Size: 5.654954321855236

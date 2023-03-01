@@ -6,6 +6,7 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.stem.porter import PorterStemmer
 from nltk.stem.snowball import SnowballStemmer
+import csv
 
 nltk.download('stopwords')
 nltk.download('wordnet')
@@ -157,3 +158,21 @@ output.write("["+ (", ".join(ShakespeareTokenized01_02)) +"]")
 """
 Vocabulary Analysis
 """
+
+lemmaData = [["Token", "Occurrences", "Size"]]
+porterData = [["Token", "Occurrences", "Size"]]
+snowData = [["Token", "Occurrences", "Size"]]
+
+for token in ShakespeareTokenized01_00:
+  for row in lemmaData:
+    if token in row:
+      row[1] += 1
+    else:
+      lemmaData.append([token, 1, len(token ])
+  
+
+
+lemmaFile = csv.writer(open ("ShakespeareTokenized01_00.csv", "w+"))
+# porterFile = csv.writer(open ("ShakespeareTokenized01_01.csv", "w+"))
+# snowFile = csv.writer(open ("ShakespeareTokenized01_02.csv", "w+"))
+

@@ -1,7 +1,12 @@
 from unidecode import unidecode
 import re
+import nltk
 from datetime import datetime
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
 
+nltk.download('stopwords')
+nltk.download('wordnet')
 
 """
 Functions
@@ -97,3 +102,33 @@ shakespeareToken01 = shakespeareNormalized.split()
 print("\nTest String 1: ", testToken01)
 output = open("ShakespeareTokenized01.txt", "w+")
 output.write("["+ (", ".join(shakespeareToken01)) +"]")
+
+"""
+Stop-words Removal
+"""
+testToken01_SW = [word for word in testToken01 if not word in stopwords.words()]
+
+sw = stopwords.words('english')
+
+shakespeareToken01_SW = [word for word in shakespeareToken01 if not word in sw]
+
+print("\nTest SW: ", testToken01_SW)
+output = open("ShakespeareTokenized01_SW.txt", "w+")
+output.write("["+ (", ".join(shakespeareToken01_SW)) +"]")
+
+"""
+Text Lemmatization
+"""
+lemmatizer = WordNetLemmatizer()
+
+testToken01_00 = [lemmatizer.lemmatize(word) for word in testToken01_SW]
+ShakespeareTokenized01_00 = [lemmatizer.lemmatize(word) for word in shakespeareToken01_SW]
+
+print("\nTest Lemmatized: ", testToken01_00)
+output = open("ShakespeareTokenized01_00.txt", "w+")
+output.write("["+ (", ".join(ShakespeareTokenized01_00)) +"]")
+
+
+"""
+Text Stemming
+"""

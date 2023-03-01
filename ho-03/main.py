@@ -258,7 +258,7 @@ output.write(f'Average Occurrences: {porterAverageOccurrences}\n')
 output.write(f'Average Size: {porterAverageSize}\n')
 output.write('\n')
 
-output.write('Snowball')
+output.write('Snowball\n')
 output.write(f'Vocabulary Size: {snowTokensNumber}\n')
 output.write(f'Average Occurrences: {snowAverageOccurrences}\n')
 output.write(f'Average Size: {snowAverageSize}\n')

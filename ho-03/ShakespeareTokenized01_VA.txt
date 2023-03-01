@@ -8,6 +8,7 @@ Vocabulary Size: 2846
 Average Occurrences: 3.3489107519325367
 Average Size: 5.654954321855236
 
-SnowballVocabulary Size: 2846
+Snowball
+Vocabulary Size: 2846
 Average Occurrences: 3.3489107519325367
 Average Size: 5.654954321855236

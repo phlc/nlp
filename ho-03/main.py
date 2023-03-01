@@ -10,6 +10,7 @@ import csv
 
 nltk.download('stopwords')
 nltk.download('wordnet')
+nltk.download('omw-1.4')
 
 """
 Functions
@@ -164,11 +165,14 @@ porterData = [["Token", "Occurrences", "Size"]]
 snowData = [["Token", "Occurrences", "Size"]]
 
 for token in ShakespeareTokenized01_00:
+  found = False
   for row in lemmaData:
     if token in row:
       row[1] += 1
-    else:
-      lemmaData.append([token, 1, len(token) ])
+      found = True
+      
+  if(not found):
+    lemmaData.append([token, 1, len(token) ])
   
 print (lemmaData)
 

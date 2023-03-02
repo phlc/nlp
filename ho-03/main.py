@@ -151,7 +151,7 @@ snow = SnowballStemmer("english")
 
 testToken01_02 = [porter.stem(word) for word in testToken01_SW]
 ShakespeareTokenized01_02 = [
-  porter.stem(word) for word in shakespeareToken01_SW
+  snow.stem(word) for word in shakespeareToken01_SW
 ]
 
 print("\nTest Snowball Stemmer: ", testToken01_02)

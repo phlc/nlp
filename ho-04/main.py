@@ -44,15 +44,15 @@ for input in fetch_data().data:
 """
 One-hot Encoding
 """
-data = data[0:20]
-for input in data:
-  with open("20News_01.txt", "w+") as f:
+
+with open("20News_01.txt", "w+") as f:
+  for input in data:
     input_encoding = one_hot_encoding(input)
     for line in input_encoding:
       line = [str(i) for i in line]
       f.write("[" + ", ".join(line) + "]\n")
-    f.write('\n\n')
-    
+    f.write('\nNew input\n')
+      
 """
 Count Vectors
 """

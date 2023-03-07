@@ -1,11 +1,12 @@
 from sklearn.datasets import fetch_20newsgroups as fetch_data
 from unidecode import unidecode
 import re
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+
 """
 Functions
 """
-
-
 def remove_punctuation(text):
   return re.sub(r"[^\w\s\d]", '', text)
 
@@ -65,9 +66,9 @@ for input in fetch_data().data:
 
 data = data[0:10]
 
-"""
-One-hot Encoding
-"""
+# """
+# One-hot Encoding
+# """
 
 with open("20News_01.txt", "w+") as f:
   for input in data:
@@ -77,9 +78,9 @@ with open("20News_01.txt", "w+") as f:
       f.write("[" + ", ".join(line) + "]\n")
     f.write('\nNew input\n')
     
-"""
-Count Vectors
-"""
+# """
+# Count Vectors
+# """
 
 with open("20News_02.txt", "w+") as f:
   for input in data:
@@ -88,9 +89,19 @@ with open("20News_02.txt", "w+") as f:
       line = [str(i) for i in line]
       f.write("[" + ", ".join(line) + "]\n")
     f.write('\nNew input\n')
+    
 """
 TF-IDF
 """
+tf_idf = TfidfVectorizer(smooth_idf=False)
+with open("20News_03.txt", "w+") as f:
+  for input in data:
+    input_encoding = tf_idf.fit_transform(input.split('\n')).toarray().tolist()
+    for line in input_encoding:
+      line = [str(i) for i in line]
+      f.write("[" + ", ".join(line) + "]\n")
+    f.write('\nNew input\n')
+
 """
 N-grams (2-grams)
 """

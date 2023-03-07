@@ -23,6 +23,27 @@ def one_hot_encoding(input):
     line_encoding = []
     line_dict = dict.fromkeys(tokens, 0)
     for word in line.split():
+      line_dict[word] = 1
+    for word in tokens:
+      line_encoding.append(line_dict[word])
+    final_encoding.append(line_encoding)
+
+  return final_encoding
+
+
+def count_vectors(input):
+  tokens = []
+  for word in input.split():
+    if word not in tokens:
+      tokens.append(word)
+  tokens.sort()
+
+  final_encoding = []
+
+  for line in input.split('\n'):
+    line_encoding = []
+    line_dict = dict.fromkeys(tokens, 0)
+    for word in line.split():
       line_dict[word] += 1
     for word in tokens:
       line_encoding.append(line_dict[word])
@@ -41,6 +62,9 @@ for input in fetch_data().data:
   input = input.lower()
   input = remove_punctuation(input)
   data.append(input)
+
+data = data[0:10]
+
 """
 One-hot Encoding
 """
@@ -52,10 +76,18 @@ with open("20News_01.txt", "w+") as f:
       line = [str(i) for i in line]
       f.write("[" + ", ".join(line) + "]\n")
     f.write('\nNew input\n')
-      
+    
 """
 Count Vectors
 """
+
+with open("20News_02.txt", "w+") as f:
+  for input in data:
+    input_encoding = count_vectors(input)
+    for line in input_encoding:
+      line = [str(i) for i in line]
+      f.write("[" + ", ".join(line) + "]\n")
+    f.write('\nNew input\n')
 """
 TF-IDF
 """

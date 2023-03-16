@@ -20,7 +20,7 @@ def heatmap(array, name):
   svm = sn.heatmap(df_cm, annot=True, square=True, linecolor='white', linewidths=1)
   
   figure = svm.get_figure()    
-  figure.savefig(f'{name}.png', dpi=400)
+  figure.savefig(f'{name}.png', dpi=100)
   figure.clf()
 
 """

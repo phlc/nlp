@@ -19,19 +19,23 @@ Process of categorizing text into one or more different classes. Text classifier
 ## Classification Approaches
 ### Rule-Based
 Classify text into organized groups by using a set of handcrafted linguistic rules.
+
 Positive:
   - Human comprehensible
   - Can be improved over time
+
 Negative:
   - Requires deep knowledge of the domain
   - Time-consuming: generating rules for a complex system can be quite challenging and usually requires a lot of analysis and testing
   - Difficult to maintain and scale: adding new rules can affect the results of the pre-existing rules.
 
 ### ML-Based
-Learns to make classifications based on past observations by using pre-labeled examples as training data
+Learns to make classifications based on past observations by using pre-labeled examples as training data.
+
 Positive:
   - Usually much more accurate than human-crafted rule-based approaches
   - Easier to maintain and you can always tag new examples to learn new tasks
+
 Negative:
   - Needs a rich source of examples to be trained
 
@@ -56,7 +60,9 @@ A decision tree or a classification tree is a tree in which each internal (non-l
 SVM draws a line or "hyperplane" that divides a space into two subspaces. One subspace contains vectors (tags) that belong to a group, and another subspace contains vectors that do not belong to that group. The optimal hyperplane is the one with the largest distance between each tag.
 
 Doesn’t need much training data to start providing accurate results
+
 Requires more computational resources than Naive Bayes
+
 Faster and more accurate
 
 ![SVM](https://monkeylearn.com/static/446109c153d4467a6e7982ad0d22b570/d8712/image15.webp)
@@ -79,7 +85,9 @@ It gives a prediction model in the form of an ensemble of weak prediction models
 Hierarchical machine learning, using multiple algorithms in a progressive chain of events. It’s similar to how the human brain works when making decisions, using different techniques simultaneously to process huge amounts of data.
 
 Requires much more training data than traditional machine learning algorithms
+
 High accuracy
+
 Lower-level engineering and computation
 
 ![Deep Learning](https://editor.analyticsvidhya.com/uploads/75211cnn-schema1.jpg)
@@ -116,4 +124,3 @@ Lower-level engineering and computation
 8. [Reuters News](http://kdd.ics.uci.edu/databases/reuters21578/reuters21578.html)
 9. [20 Newsgorups](http://qwone.com/~jason/20Newsgroups/)
 10. [Spambase](https://archive.ics.uci.edu/ml/datasets/Spambase)
-11. [SMS Spam Collection](https://www.kaggle.com/uciml/sms-spam-collection-dataset)

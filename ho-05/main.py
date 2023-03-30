@@ -20,7 +20,7 @@ def heatmap(array, name):
   svm = sn.heatmap(df_cm, annot=True, square=True, linecolor='white', linewidths=1)
   
   figure = svm.get_figure()    
-  figure.savefig(f'{name}.png', dpi=400)
+  figure.savefig(f'{name}.png', dpi=100)
   figure.clf()
 
 """
@@ -104,18 +104,27 @@ ng_embedding = vectorizer.fit_transform(data).toarray()
 vectorizer = CountVectorizer()
 vectorizer.fit(data)
 vocab = vectorizer.vocabulary_
-co_embedding = []
+matrix = []
 for i in range(len(vocab)):
-  co_embedding.append([0] * len(vocab))
+  matrix.append([0] * len(vocab))
 
 for i in range(len(vocab)):
-  co_embedding[i][i] = 1
+  matrix[i][i] = 1
 
 for line in data:
   l = line.split()
   for i in range(1, len(l)):
     if (l[i - 1] in vocab and l[i] in vocab):
-      co_embedding[vocab[l[i - 1]]][vocab[l[i]]] += 1
+      matrix[vocab[l[i - 1]]][vocab[l[i]]] += 1
+
+co_embedding = []
+
+for line in data:
+  tmp = [0] * len(vocab)
+  for word in line.split():
+    if word in vocab:
+      tmp[vocab[word]] = sum(matrix[vocab[word]][i] for i in range(0, len(vocab)))
+  co_embedding.append(tmp)
 
 #Word2Vec
 words = []
@@ -162,6 +171,10 @@ heatmap(matrix, 'manhattan_tfIdf')
 matrix = minkowski(ng_embedding, 1)
 heatmap(matrix, 'manhattan_nGrams2')
 
+#Co-occurrence Vectors (Context Window = 1)
+matrix = minkowski(co_embedding, 1)
+heatmap(matrix, 'manhattan_coOccorrence')
+
 #Word2Vec
 matrix = minkowski(wv_embedding, 1)
 heatmap(matrix, 'manhattan_word2vec')
@@ -184,6 +197,10 @@ heatmap(matrix, 'euclidean_tfIdf')
 #n-grams (2-grams)
 matrix = minkowski(ng_embedding, 2)
 heatmap(matrix, 'euclidean_nGrams2')
+
+#Co-occurrence Vectors (Context Window = 1)
+matrix = minkowski(co_embedding, 2)
+heatmap(matrix, 'euclidean_coOccorrence')
 
 #Word2Vec
 matrix = minkowski(wv_embedding, 2)
@@ -208,6 +225,10 @@ heatmap(matrix, 'minkowskiP3_tfIdf')
 matrix = minkowski(ng_embedding, 3)
 heatmap(matrix, 'minkowskiP3_nGrams2')
 
+#Co-occurrence Vectors (Context Window = 1)
+matrix = minkowski(co_embedding, 3)
+heatmap(matrix, 'minkowskiP3_coOccorrence')
+
 #Word2Vec
 matrix = minkowski(wv_embedding, 3)
 heatmap(matrix, 'minkowskiP3_word2vec')
@@ -230,6 +251,10 @@ heatmap(matrix, 'cosineSimilarity_tfIdf')
 #n-grams (2-grams)
 matrix = cosine_similarity(ng_embedding)
 heatmap(matrix, 'cosineSimilarity_nGrams2')
+
+#Co-occurrence Vectors (Context Window = 1)
+matrix = cosine_similarity(co_embedding)
+heatmap(matrix, 'cosineSimilarity_coOccorrence')
 
 #Word2Vec
 matrix = cosine_similarity(wv_embedding)

@@ -2,6 +2,7 @@ import random
 import numpy as np
 import os
 import matplotlib.pyplot as plt
+import explore_data as ex
 
 """
 Functions
@@ -47,5 +48,5 @@ Main
 """
 
 train, test = load_imdb_sentiment_analysis_dataset()
-
 print(train[0][0], train[1][0])
+ex.plot_frequency_distribution_of_ngrams(train[0])

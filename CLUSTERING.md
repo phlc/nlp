@@ -62,3 +62,7 @@ HDBSCAN ->  Varia a forma de computar densidade
 - Ponto Positivo:
   - Muito estável
   - Ainda mais capaz de detectar clusters mais difíceis de serem observados a olho nu
+
+  ## Example Notebook
+
+  [https://colab.research.google.com/drive/1eBfsVgY75C89Gb-4BdJQ1m1EFOGzIMkw](https://colab.research.google.com/drive/1eBfsVgY75C89Gb-4BdJQ1m1EFOGzIMkw)

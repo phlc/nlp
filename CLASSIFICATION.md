@@ -124,3 +124,7 @@ Lower-level engineering and computation
 8. [Reuters News](http://kdd.ics.uci.edu/databases/reuters21578/reuters21578.html)
 9. [20 Newsgorups](http://qwone.com/~jason/20Newsgroups/)
 10. [Spambase](https://archive.ics.uci.edu/ml/datasets/Spambase)
+
+## Example Notebook
+
+[https://colab.research.google.com/drive/1gQfiLNYPhpCC-gmUD_ofNa0BNeIpfHXG](https://colab.research.google.com/drive/1gQfiLNYPhpCC-gmUD_ofNa0BNeIpfHXG)
